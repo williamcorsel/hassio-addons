@@ -1,0 +1,65 @@
+name: HAMC Server
+description: Host a Bedrock Minecraft server on Home Assistant
+version: 1.0.1
+slug: hamc
+init: false
+arch:
+  - amd64
+  - aarch64
+ports:
+  19132/udp: "19132"
+ports_description:
+  19132/udp: Minecraft Server Port
+options:
+  version: LATEST
+  server_name: Minecraft Server
+  level_name: World
+  gamemode: survival
+  difficulty: normal
+  allow_cheats: false
+  max_players: 10
+  allow_list: false
+  allow_list_users: []
+  level_type: DEFAULT
+  online_mode: true
+  view_distance: 10
+  tick_distance: 4
+  player_idle_timeout: 30
+  max_threads: 2
+  level_seed: ""
+  default_player_permission: member
+  texturepack_required: false
+  server_authoritative_movement: false
+  player_movement_score_threshold: 20
+  player_movement_distance_threshold: 0.3
+  player_movement_duration_threshold_ms: 500
+  correct_player_movement: false
+schema:
+  version: str
+  server_name: str
+  level_name: str
+  gamemode: list(survival|creative|adventure|spectator)
+  difficulty: list(peaceful|easy|normal|hard)
+  allow_cheats: bool
+  max_players: int
+  allow_list: bool
+  allow_list_users:
+    - str
+  level_type: list(DEFAULT|FLAT|LEGACY)?
+  online_mode: bool?
+  view_distance: int?
+  tick_distance: int?
+  player_idle_timeout: int?
+  max_threads: int?
+  level_seed: str?
+  default_player_permission: list(member|operator|visitor)?
+  texturepack_required: bool?
+  server_authoritative_movement: bool?
+  player_movement_score_threshold: int?
+  player_movement_distance_threshold: float?
+  player_movement_duration_threshold_ms: int?
+  correct_player_movement: bool?
+map: 
+  - addons:rw
+  
+
