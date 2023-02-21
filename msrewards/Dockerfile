@@ -15,6 +15,8 @@ ENV S6_CMD_WAIT_FOR_SERVICES=1 \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
     S6_SERVICES_GRACETIME=0
 
+RUN rm -rf /etc/cont-init.d/*
+
 ##################
 # 3 Install apps #
 ##################
