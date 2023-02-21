@@ -1,0 +1,63 @@
+name: HAMC Server Java
+description: Host a Java Minecraft server on Home Assistant
+version: 1.0.0
+slug: hamc-java
+init: false
+arch:
+  - amd64
+  - aarch64
+  - armv7
+ports:
+  25565/tcp: "25565"
+ports_description:
+  25565/tcp: Minecraft Server Port
+options:
+  VERSION: LATEST
+  SERVER_NAME: "HAMC Java Server"
+  MOTD: "Greetings from Home Assistant"
+  LEVEL: "World"
+  GAMEMODE: survival
+  DIFFICULTY: normal
+  HARDCORE: false
+  MAX_PLAYERS: 10
+  WHITELIST: ""
+  OPS: ""
+  SPAWN_PROTECTION: 0
+  PVP: true
+  MAX_WORLD_SIZE: 29999984
+  ALLOW_NETHER: true
+  SEED: ""
+  VIEW_DISTANCE: 10
+  ONLINE_MODE: true
+  MEMORY: 1G
+  ANNOUNCE_PLAYER_ACHIEVEMENTS: true
+  ENABLE_COMMAND_BLOCK: false
+  FORCE_GAMEMODE: false
+  MAX_BUILD_HEIGHT: 256
+schema:
+  VERSION: str
+  SERVER_NAME: str
+  MOTD: str
+  LEVEL: str
+  GAMEMODE: list(survival|creative|adventure|spectator)
+  DIFFICULTY: list(peaceful|easy|normal|hard)
+  HARDCORE: bool
+  MAX_PLAYERS: int
+  WHITELIST: str
+  OPS: str
+  SPAWN_PROTECTION: int
+  PVP: bool
+  MAX_WORLD_SIZE: int
+  ALLOW_NETHER: bool
+  SEED: str
+  VIEW_DISTANCE: int
+  ONLINE_MODE: bool
+  MEMORY: str
+  ANNOUNCE_PLAYER_ACHIEVEMENTS: bool
+  ENABLE_COMMAND_BLOCK: bool
+  FORCE_GAMEMODE: bool
+  MAX_BUILD_HEIGHT: int
+map:
+  - addons:rw
+environment:
+  EULA: "TRUE"
