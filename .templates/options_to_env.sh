@@ -18,7 +18,7 @@ for KEYS in "${arr[@]}"; do
     # export key
     VALUE=$(jq ."$KEYS" "${JSONSOURCE}")
     VALUE="${VALUE//[\"\']/}"
-    line="${KEYS}='${VALUE}'"
+    line="${KEYS}=${VALUE}"
     # Check if secret
     if [[ "${line}" == *'!secret '* ]]; then
         echo "secret detected"
@@ -42,8 +42,7 @@ for KEYS in "${arr[@]}"; do
     ######################################
     # Export the variable to run scripts #
     ######################################
-    export "${KEYS}='${VALUE}'"
-    echo "${KEYS}='${VALUE}'}"
+    export "${KEYS}=${VALUE}"
 
     # For non s6
     if cat /etc/services.d/*/*run* &>/dev/null; then sed -i "1a export $line" /etc/services.d/*/*run* 2>/dev/null; fi
