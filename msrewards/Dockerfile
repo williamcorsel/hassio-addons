@@ -28,7 +28,7 @@ RUN if [ -d /etc/cont-init.d ]; then chmod -R 755 /etc/cont-init.d; fi && \
     if [ -f /entrypoint.sh ]; then chmod 755 /entrypoint.sh; fi
 
 # Modules
-ARG MODULES="banner.sh options_to_env.sh"
+ARG MODULES="banner.sh"
 ARG SOURCE="https://raw.githubusercontent.com/williamcorsel/hassio-addons/master/.templates"
 
 # Automatic modules download
@@ -40,7 +40,7 @@ RUN if ! command -v bash >/dev/null 2>/dev/null; then (apt-get update && apt-get
     && chmod -R 755 /etc/cont-init.d
 
 # Manual apps
-ENV PACKAGES=""
+ENV PACKAGES="chromium chromium-chromedriver"
 ARG SOURCE="https://raw.githubusercontent.com/williamcorsel/hassio-addons/master/.templates"
 
 # Automatic apps & bashio
@@ -52,12 +52,15 @@ RUN if ! command -v bash >/dev/null 2>/dev/null; then (apt-get update && apt-get
     && eval /./automatic_packages.sh "${PACKAGES:-}" \
     && rm /automatic_packages.sh
 
+# Python setup
+RUN pip install -r /requirements.txt
+
 ################
 # 4 Entrypoint #
 ################
 
 RUN chmod 777 /entrypoint.sh
-WORKDIR /addons/hamc-server-bedrock/data
+WORKDIR /
 ENTRYPOINT [ "/usr/bin/env" ]
 CMD [ "/entrypoint.sh" ]
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

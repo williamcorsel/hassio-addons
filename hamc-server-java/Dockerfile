@@ -41,7 +41,7 @@ RUN if ! command -v bash >/dev/null 2>/dev/null; then (apt-get update && apt-get
 
 # Manual apps
 ENV PACKAGES=""
-ARG SOURCE="https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates"
+ARG SOURCE="https://raw.githubusercontent.com/williamcorsel/hassio-addons/master/.templates"
 
 # Automatic apps & bashio
 # hadolint ignore=SC2015

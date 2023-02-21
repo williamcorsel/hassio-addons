@@ -1,0 +1,20 @@
+name: Microsoft Rewards Bot
+description: "Automated Microsoft Rewards Collection in Home Assistant."
+version: 1.0.0
+slug: msrewards
+init: false
+arch:
+  - amd64
+  - aarch64
+options:
+  start_at: "12:00"
+  everyday: true
+schema:
+  start_at: str
+  everyday: bool
+  session: bool?
+  fast: bool?
+  error: bool?
+  shutdown: str?
+map:
+  - config:rw
