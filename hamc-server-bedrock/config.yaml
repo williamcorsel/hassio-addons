@@ -1,7 +1,7 @@
-name: HAMC Server
+name: HAMC Server Bedrock
 description: Host a Bedrock Minecraft server on Home Assistant
-version: 1.0.0
-slug: hamc
+version: 1.0.1
+slug: hamc-bedrock
 init: false
 arch:
   - amd64
@@ -11,55 +11,64 @@ ports:
 ports_description:
   19132/udp: Minecraft Server Port
 options:
-  version: LATEST
-  server_name: Minecraft Server
-  level_name: World
-  gamemode: survival
-  difficulty: normal
-  allow_cheats: false
-  max_players: 10
-  allow_list: false
-  allow_list_users: []
-  level_type: DEFAULT
-  online_mode: true
-  view_distance: 10
-  tick_distance: 4
-  player_idle_timeout: 30
-  max_threads: 2
-  level_seed: ""
-  default_player_permission: member
-  texturepack_required: false
-  server_authoritative_movement: false
-  player_movement_score_threshold: 20
-  player_movement_distance_threshold: 0.3
-  player_movement_duration_threshold_ms: 500
-  correct_player_movement: false
+  VERSION: LATEST
+  SERVER_NAME: HAMC Server
+  LEVEL_NAME: World
+  GAMEMODE: survival
+  DIFFICULTY: normal
+  ALLOW_CHEATS: false
+  MAX_PLAYERS: 10
+  ALLOW_LIST_USERS: ""
+  LEVEL_TYPE: DEFAULT
+  ONLINE_MODE: true
+  VIEW_DISTANCE: 10
+  TICK_DISTANCE: 4
+  PLAYER_IDLE_TIMEOUT: 30
+  MAX_THREADS: 2
+  LEVEL_SEED: ""
+  DEFAULT_PLAYER_PERMISSION: member
+  TEXTUREPACK_REQUIRED: false
+  SERVER_AUTHORITATIVE_MOVEMENT: false
+  SERVER_AUTHORAITIVE_BLOCK_BREAKING: false
+  EMIT_SERVER_TELEMETRY: false
+  PLAYER_MOVEMENT_SCORE_THRESHOLD: 20
+  PLAYER_MOVEMENT_DISTANCE_THRESHOLD: 0.3
+  PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS: 500
+  CORRECT_PLAYER_MOVEMENT: false
+  OPS: ""
+  MEMBERS: ""
+  VISITORS: ""
 schema:
-  version: str
-  server_name: str
-  level_name: str
-  gamemode: list(survival|creative|adventure|spectator)
-  difficulty: list(peaceful|easy|normal|hard)
-  allow_cheats: bool
-  max_players: int
-  allow_list: bool
-  allow_list_users:
-    - str
-  level_type: list(DEFAULT|FLAT|LEGACY)?
-  online_mode: bool?
-  view_distance: int?
-  tick_distance: int?
-  player_idle_timeout: int?
-  max_threads: int?
-  level_seed: str?
-  default_player_permission: list(member|operator|visitor)?
-  texturepack_required: bool?
-  server_authoritative_movement: bool?
-  player_movement_score_threshold: int?
-  player_movement_distance_threshold: float?
-  player_movement_duration_threshold_ms: int?
-  correct_player_movement: bool?
+  VERSION: str
+  SERVER_NAME: str
+  LEVEL_NAME: str
+  GAMEMODE: list(survival|creative|adventure|spectator)
+  DIFFICULTY: list(peaceful|easy|normal|hard)
+  ALLOW_CHEATS: bool
+  MAX_PLAYERS: int
+  ALLOW_LIST_USERS: str
+  LEVEL_TYPE: list(DEFAULT|FLAT|LEGACY)
+  ONLINE_MODE: bool
+  VIEW_DISTANCE: int
+  TICK_DISTANCE: int
+  PLAYER_IDLE_TIMEOUT: int
+  MAX_THREADS: int
+  LEVEL_SEED: str
+  DEFAULT_PLAYER_PERMISSION: list(member|operator|visitor)
+  TEXTUREPACK_REQUIRED: bool
+  SERVER_AUTHORITATIVE_MOVEMENT: bool
+  SERVER_AUTHORAITIVE_BLOCK_BREAKING: bool
+  EMIT_SERVER_TELEMETRY: bool
+  PLAYER_MOVEMENT_SCORE_THRESHOLD: int
+  PLAYER_MOVEMENT_DISTANCE_THRESHOLD: float
+  PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS: int
+  CORRECT_PLAYER_MOVEMENT: bool
+  OPS: str
+  MEMBERS: str
+  VISITORS: str
 map: 
   - addons:rw
+environment:
+  EULA: "TRUE"
   
 
