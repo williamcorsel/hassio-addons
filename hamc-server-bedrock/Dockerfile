@@ -29,7 +29,7 @@ RUN if [ -d /etc/cont-init.d ]; then chmod -R 755 /etc/cont-init.d; fi && \
 
 # Modules
 ARG MODULES="banner.sh options_to_env.sh"
-ARG SOURCE="https://raw.githubusercontent.com/williamcorsel/hassio-addons/hamc-server-bedrock-updates/.templates"
+ARG SOURCE="https://raw.githubusercontent.com/williamcorsel/hassio-addons/master/.templates"
 
 # Automatic modules download
 RUN if ! command -v bash >/dev/null 2>/dev/null; then (apt-get update && apt-get install -yqq --no-install-recommends bash || apk add --no-cache bash) >/dev/null; fi \
