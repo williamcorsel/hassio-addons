@@ -1,0 +1,8 @@
+{
+  "build_from":
+    {
+      "amd64": "itzg/minecraft-server:2023.1.0",
+      "aarch64": "itzg/minecraft-server:2023.1.0",
+      "armv7": "itzg/minecraft-server:2023.1.0",
+    },
+}
