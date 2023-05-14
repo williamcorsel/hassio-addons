@@ -21,6 +21,7 @@ options:
   ALLOW_LIST_USERS: ""
   LEVEL_TYPE: DEFAULT
   ONLINE_MODE: true
+  ENABLE_LAN_VISIBILITY: true
   VIEW_DISTANCE: 10
   TICK_DISTANCE: 4
   PLAYER_IDLE_TIMEOUT: 30
@@ -49,6 +50,7 @@ schema:
   ALLOW_LIST_USERS: str
   LEVEL_TYPE: list(DEFAULT|FLAT|LEGACY)
   ONLINE_MODE: bool
+  ENABLE_LAN_VISIBILITY: bool
   VIEW_DISTANCE: int
   TICK_DISTANCE: int
   PLAYER_IDLE_TIMEOUT: int
@@ -66,9 +68,9 @@ schema:
   OPS: str
   MEMBERS: str
   VISITORS: str
-map: 
+map:
   - addons:rw
 environment:
   EULA: "TRUE"
-  
+
 
