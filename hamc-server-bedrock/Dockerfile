@@ -56,10 +56,9 @@ RUN if ! command -v bash >/dev/null 2>/dev/null; then (apt-get update && apt-get
 # 4 Entrypoint #
 ################
 
-RUN chmod 777 /entrypoint.sh
+RUN chmod +X /entrypoint.sh
 WORKDIR /addons/hamc-server-bedrock/data
-ENTRYPOINT [ "/usr/bin/env" ]
-CMD [ "/entrypoint.sh" ]
+CMD [ "/usr/bin/env", "/entrypoint.sh" ]
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ############
