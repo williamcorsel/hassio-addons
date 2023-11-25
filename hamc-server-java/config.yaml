@@ -12,6 +12,7 @@ ports:
 ports_description:
   25565/tcp: Minecraft Server Port
 options:
+  TYPE: VANILLA
   VERSION: LATEST
   SERVER_NAME: "HAMC Java Server"
   MOTD: "Greetings from Home Assistant"
@@ -35,6 +36,7 @@ options:
   FORCE_GAMEMODE: false
   MAX_BUILD_HEIGHT: 256
 schema:
+  TYPE: str
   VERSION: str
   SERVER_NAME: str
   MOTD: str
