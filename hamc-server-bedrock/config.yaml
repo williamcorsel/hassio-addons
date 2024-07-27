@@ -70,6 +70,7 @@ schema:
   VISITORS: str
 map:
   - addons:rw
+  - addon_config:rw
 environment:
   EULA: "TRUE"
 
