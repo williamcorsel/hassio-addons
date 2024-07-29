@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Fixed HAOS option loading
+
 ## 1.0.3
 
 - Fixed `SERVER_AUTHORITATIVE_MOVEMENT` option
