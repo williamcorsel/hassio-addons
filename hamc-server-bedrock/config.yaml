@@ -68,6 +68,13 @@ schema:
   OPS: str
   MEMBERS: str
   VISITORS: str
+backup: cold
+backup_exclude:
+  - "bedrock_server*"
+  - "behavior_packs/vanilla*"
+  - "behavior_packs/chemistry*"
+  - "resource_packs/vanilla*"
+  - "resource_packs/chemistry*"
 map:
   - addons:rw
   - addon_config:rw
