@@ -12,9 +12,9 @@ To access the Minecraft server from outside your network, forward port 19132 (UD
 <your_ip>:19132
 ```
 
-Server data is stored in the `/addons/hamc-server-bedrock/data` folder for easy backups & adjustments.
+Server data is stored in the `/addon_configs/<slug>_hamc-bedrock` folder for easy backups & adjustments.
 
 ## References
 
-* Thanks to [alexbelgium](https://github.com/alexbelgium/hassio-addons) for the add-on template.
-* Thanks to [itzg](https://github.com/itzg/docker-minecraft-bedrock-server) for the docker image.
+- Thanks to [alexbelgium](https://github.com/alexbelgium/hassio-addons) for the add-on template.
+- Thanks to [itzg](https://github.com/itzg/docker-minecraft-bedrock-server) for the docker image.
