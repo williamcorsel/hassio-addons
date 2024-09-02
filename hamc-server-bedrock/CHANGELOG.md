@@ -1,3 +1,9 @@
+## 1.2.0
+
+- Fixed native home assistant backups
+- BREAKING CHANGE: Server data now stored at `/addon_configs/<slug>_hamc-bedrock`. The addon will attempt to migrate your data to the new location, but it is recommended to backup your `/addons/hamc-server-bedrock/data` folder before updating.
+
+
 ## 1.1.0
 
 - Fixed HAOS option loading
