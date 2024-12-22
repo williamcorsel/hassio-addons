@@ -41,6 +41,9 @@ ENV PACKAGES=""
 ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
 RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.sh
 
+# Fix send-command for server running in /config
+RUN sed -i 's~/data/bedrock_server-~/config/bedrock_server-~g' /usr/local/bin/send-command
+
 ################
 # 4 Entrypoint #
 ################
