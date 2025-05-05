@@ -1,6 +1,6 @@
 name: HAMC Server Java
 description: Host a Java Minecraft server on Home Assistant
-version: 1.1.0
+version: 1.1.1
 slug: hamc-java
 init: false
 arch:
@@ -34,8 +34,10 @@ options:
   ENABLE_COMMAND_BLOCK: false
   FORCE_GAMEMODE: false
   MAX_BUILD_HEIGHT: 256
+  TYPE: VANILLA
 schema:
   VERSION: str
+  TYPE: list(VANILLA|FABRIC|BUKKIT|SPIGOT|FORGE|PAPER|QUILT|MAGMA|MAGMA_MAINTAINED|KETTING|MOHIST|CATSERVER)
   SERVER_NAME: str
   MOTD: str
   LEVEL: str
