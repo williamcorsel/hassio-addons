@@ -1,0 +1,16 @@
+name: "Playit.gg"
+slug: "playitgg"
+description: "Addon to run the Playit.gg tunnel service in Home Assistant"
+version: "0.93"
+image: alex33856/playitgg-docker
+init: false
+legacy: true
+host_network: true
+arch:
+  - amd64
+  - aarch64
+  - armv7
+map:
+  - type: addon_config
+    read_only: false
+    path: /etc/playit/
