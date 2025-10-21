@@ -18,7 +18,7 @@ options:
   SERVER_NAME: "HAMC Java Server"
   MOTD: "Greetings from Home Assistant"
   LEVEL: "World"
-  GAMEMODE: survival
+  MODE: survival
   DIFFICULTY: normal
   HARDCORE: false
   MAX_PLAYERS: 10
@@ -44,7 +44,7 @@ schema:
   SERVER_NAME: str
   MOTD: str
   LEVEL: str
-  GAMEMODE: list(survival|creative|adventure|spectator)
+  MODE: list(survival|creative|adventure|spectator)
   DIFFICULTY: list(peaceful|easy|normal|hard)
   HARDCORE: bool
   MAX_PLAYERS: int
