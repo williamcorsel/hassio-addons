@@ -1,6 +1,6 @@
 name: HAMC Server Java
 description: Host a Java Minecraft server on Home Assistant
-version: 1.1.1
+version: 1.2.0
 slug: hamc-java
 init: false
 arch:
@@ -9,14 +9,16 @@ arch:
   - armv7
 ports:
   25565/tcp: "25565"
+  25575/tcp: "25575"
 ports_description:
   25565/tcp: Minecraft Server Port
+  25575/tcp: RCON Port
 options:
   VERSION: LATEST
   SERVER_NAME: "HAMC Java Server"
   MOTD: "Greetings from Home Assistant"
   LEVEL: "World"
-  GAMEMODE: survival
+  MODE: survival
   DIFFICULTY: normal
   HARDCORE: false
   MAX_PLAYERS: 10
@@ -35,13 +37,14 @@ options:
   FORCE_GAMEMODE: false
   MAX_BUILD_HEIGHT: 256
   TYPE: VANILLA
+  RCON_PASSWORD: ""
 schema:
   VERSION: str
   TYPE: list(VANILLA|FABRIC|BUKKIT|SPIGOT|FORGE|PAPER|QUILT|MAGMA|MAGMA_MAINTAINED|KETTING|MOHIST|CATSERVER)
   SERVER_NAME: str
   MOTD: str
   LEVEL: str
-  GAMEMODE: list(survival|creative|adventure|spectator)
+  MODE: list(survival|creative|adventure|spectator)
   DIFFICULTY: list(peaceful|easy|normal|hard)
   HARDCORE: bool
   MAX_PLAYERS: int
@@ -59,7 +62,13 @@ schema:
   ENABLE_COMMAND_BLOCK: bool
   FORCE_GAMEMODE: bool
   MAX_BUILD_HEIGHT: int
+  RCON_PASSWORD: password
 map:
-  - addons:rw
+  - type: data
+    read_only: false
+    path: /hassio_data
+  - type: addon_config
+    read_only: false
+    path: /data
 environment:
   EULA: "TRUE"

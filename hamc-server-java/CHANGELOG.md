@@ -1,3 +1,11 @@
+## next
+
+## 1.2.0
+
+- Exposed the RCON port (25575) for remote console access. Ensure to set a strong `RCON_PASSWORD` in the configuration to use this feature.
+- Mount the data folder to `/addon_config` for easier access to configuration & world files by @meritw
+- Fix the Gamemode option not working by renaming it to Mode
+
 ## 1.1.1
 
 - Add ability to select server type by @joelhaasnoot
