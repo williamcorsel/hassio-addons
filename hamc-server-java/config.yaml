@@ -9,8 +9,10 @@ arch:
   - armv7
 ports:
   25565/tcp: "25565"
+  25575/tcp: "25575"
 ports_description:
   25565/tcp: Minecraft Server Port
+  25575/tcp: RCON Port
 options:
   VERSION: LATEST
   SERVER_NAME: "HAMC Java Server"
@@ -35,6 +37,7 @@ options:
   FORCE_GAMEMODE: false
   MAX_BUILD_HEIGHT: 256
   TYPE: VANILLA
+  RCON_PASSWORD: ""
 schema:
   VERSION: str
   TYPE: list(VANILLA|FABRIC|BUKKIT|SPIGOT|FORGE|PAPER|QUILT|MAGMA|MAGMA_MAINTAINED|KETTING|MOHIST|CATSERVER)
@@ -59,6 +62,7 @@ schema:
   ENABLE_COMMAND_BLOCK: bool
   FORCE_GAMEMODE: bool
   MAX_BUILD_HEIGHT: int
+  RCON_PASSWORD: password
 map:
   - type: data
     read_only: false
