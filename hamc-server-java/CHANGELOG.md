@@ -1,7 +1,7 @@
 ## next
 
 - Exposed the RCON port (25575) for remote console access. Ensure to set a strong `RCON_PASSWORD` in the configuration to use this feature.
-- Mount the data folder to `/addon_config` for easier access to configuration & world files.
+- Mount the data folder to `/addon_config` for easier access to configuration & world files by @meritw
 
 ## 1.1.1
 
