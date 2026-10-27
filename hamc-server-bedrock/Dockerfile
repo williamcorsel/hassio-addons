@@ -60,6 +60,9 @@ WORKDIR /config
 ENTRYPOINT [ "/usr/bin/env" ]
 CMD [ "/ha_entrypoint.sh" ]
 
+# The base image checks $SERVER_PORT, but add-on options are not set as container environment variables
+HEALTHCHECK --start-period=60s CMD /usr/local/bin/mc-monitor status-bedrock --host 127.0.0.1 --port "$(jq -r '.SERVER_PORT // 19132' /data/options.json)"
+
 ############
 # 5 Labels #
 ############

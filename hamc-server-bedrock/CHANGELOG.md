@@ -1,5 +1,9 @@
-## 1.2.1
+## 1.3.0
 
+- Fix players not being able to connect to Bedrock server 1.26.50 and later. These versions use a new connection method (NetherNet) that needs TCP port 19132 and extra UDP ports. The add-on now uses the host network, so the server can open these ports itself.
+- Add optional `SERVER_UDP_PORTS` option to set the UDP ports used for gameplay. Use it when players connect from outside your network.
+- Add `SERVER_PORT` option to set the port the server uses on your Home Assistant host (default 19132).
+- BREAKING CHANGE: The port in the add-on network settings is no longer used. If you changed it, set `SERVER_PORT` to that port instead.
 - Fix some config names by @felixstorm
 - Fix send-command by @felixstorm
 
