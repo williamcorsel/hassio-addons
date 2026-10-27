@@ -1,17 +1,15 @@
 name: HAMC Server Bedrock
 description: Host a Bedrock Minecraft server on Home Assistant
-version: 1.2.0
+version: 1.3.0
 slug: hamc-bedrock
 init: false
 arch:
   - amd64
   - aarch64
-ports:
-  19132/udp: 19132
-ports_description:
-  19132/udp: Minecraft Server Port
+host_network: true
 options:
   VERSION: LATEST
+  SERVER_PORT: 19132
   SERVER_NAME: HAMC Server
   LEVEL_NAME: World
   GAMEMODE: survival
@@ -41,6 +39,7 @@ options:
   VISITORS: ""
 schema:
   VERSION: str
+  SERVER_PORT: port
   SERVER_NAME: str
   LEVEL_NAME: str
   GAMEMODE: list(survival|creative|adventure)
@@ -68,6 +67,7 @@ schema:
   OPS: str
   MEMBERS: str
   VISITORS: str
+  SERVER_UDP_PORTS: str?
 backup: cold
 backup_exclude:
   - "bedrock_server*"
